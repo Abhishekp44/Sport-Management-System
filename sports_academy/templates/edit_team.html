@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Team{% endblock %}
+
+{% block content %}
+<div class="container my-3">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Card for editing the team -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Edit Team: {{ team.name }}</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        
+                        <!-- Team Name Field -->
+                        <div class="form-group mb-3">
+                            <label for="id_name">Team Name</label>
+                            {{ form.name }}
+                        </div>
+
+                        <!-- Coach Field -->
+                        <div class="form-group mb-3">
+                            <label for="id_coach">Coach</label>
+                            {{ form.coach }}
+                        </div>
+
+                        <!-- Update Button -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Update Team</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Cancel Button -->
+                    <a href="{% url 'coach_dashboard' %}" class="btn btn-secondary mt-3">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

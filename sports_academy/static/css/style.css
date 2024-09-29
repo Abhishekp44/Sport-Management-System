@@ -1,0 +1,16 @@
+
+form .form-control {
+    border-radius: 5px;
+    padding: 10px;
+}
+    
+.btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+}
+    
+.card {
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+    

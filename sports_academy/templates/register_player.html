@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Register Player{% endblock %}
+
+{% block content %}
+<div class="container mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Card layout for registration -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Register New Player</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        
+                        <!-- Name Field -->
+                        <div class="form-group mb-3">
+                            <label for="id_name">Player Name</label>
+                            {{ form.name }}
+                        </div>
+
+                        <!-- Age Field -->
+                        <div class="form-group mb-3">
+                            <label for="id_age">Age</label>
+                            {{ form.age }}
+                        </div>
+
+                        <!-- Sport Field -->
+                        <div class="form-group mb-3">
+                            <label for="id_sport">Sport</label>
+                            {{ form.sport }}
+                        </div>
+
+                        <!-- Medical Conditions Field -->
+                        <div class="form-group mb-3">
+                            <label for="id_medical_conditions">Medical Conditions</label>
+                            {{ form.medical_conditions }}
+                        </div>
+
+                        <!-- Team Field -->
+                        <div class="form-group mb-3">
+                            <label for="id_team">Team</label>
+                            {{ form.team }}
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary w-100">Register Player</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
